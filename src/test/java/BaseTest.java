@@ -1,17 +1,12 @@
 import aquality.selenium.browser.AqualityServices;
 import aquality.selenium.browser.Browser;
-import aquality.selenium.elements.interfaces.IElementFactory;
+import framework.utils.ReadPropertyUtil;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public abstract class BaseTest {
 
-    private static final String MAIN_URL = "http://the-internet.herokuapp.com/iframe";
-    protected final IElementFactory elementFactory;
-
-    protected BaseTest() {
-        elementFactory = AqualityServices.getElementFactory();
-    }
+    private static final String MAIN_URL = ReadPropertyUtil.getData("mainUrl");;
 
     @BeforeMethod
     protected void beforeMethod() {
