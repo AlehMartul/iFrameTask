@@ -13,7 +13,7 @@ public class FrameTest extends BaseTest{
         Assert.assertTrue(mainPage.isMainPageLoaded(), "Main page didn't load");
         mainPage.clearTextField();
         mainPage.sendText(RANDOM_TEXT);
-        Assert.assertTrue(mainPage.isSendingStringOnTheScreen(RANDOM_TEXT), "There is not sending text on the screen");
+        Assert.assertEquals(mainPage.isSendingStringOnTheScreen(RANDOM_TEXT), "There is not sending text on the screen");
         mainPage.selectTextField();
         mainPage.pressBButton();
         Assert.assertTrue(mainPage.isEnteredTextAreBold(), "Entered text is not bold");
